@@ -36,7 +36,7 @@ final class SpringStompClient {
         this.url = url;
 
         WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-        container.setDefaultMaxTextMessageBufferSize(Integer.MAX_VALUE);
+        container.setDefaultMaxTextMessageBufferSize(50000);
         Transport transport = new WebSocketTransport(new StandardWebSocketClient(container));
 
         ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
